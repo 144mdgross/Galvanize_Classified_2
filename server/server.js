@@ -13,6 +13,8 @@ app.use('/classifieds', messages);
 
 const port = process.env.PORT || 3000;
 
+app.use(express.static(path.join(__dirname, 'client')));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
