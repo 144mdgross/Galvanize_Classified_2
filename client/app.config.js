@@ -11,9 +11,9 @@
 
     $stateProvider
       .state({
-        name: 'posts',
+        name: 'classifieds',
         url: '/',
-        component: 'posts'
+        component: 'classifieds'
       })
   }
 }())
