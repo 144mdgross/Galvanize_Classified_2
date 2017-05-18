@@ -15,5 +15,10 @@
         url: '/',
         component: 'classifieds'
       })
+      .state({
+        name: 'edit',
+        url: 'edit/:id',
+        component: 'singlePost'
+      })
   }
 }())

@@ -1,5 +1,5 @@
 <div class="row">
-       <div class="col s12 m5 l5" ng-repeat="post in $ctrl.posts">
+       <div class="col s12 m6 l6" ng-repeat="post in $ctrl.posts">
          <div class="card">
            <div class="card-image">
              <img src="{{post.item_image}}">
@@ -9,7 +9,7 @@
              <p>{{post.description}}</p>
            </div>
            <div class="card-action">
-             <a href="#">{{post.price}}</a>
+             <a ui-sref="edit({id: post.id})">{{post.price}}</a>
            </div>
          </div>
        </div>

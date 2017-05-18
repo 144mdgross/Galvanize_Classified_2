@@ -1,0 +1,39 @@
+<div class="row">
+       <div class="col s12 m6 l6">
+         <div class="card">
+           <div class="card-image">
+             <img src="{{$ctrl.post.item_image}}">
+             <span class="card-title">{{$ctrl.post.title}}</span>
+           </div>
+           <div class="card-content">
+             <p>{{$ctrl.post.description}}</p>
+           </div>
+           <div class="card-action">
+             <a ui-sref="edit({id: $ctrl.post.id})">{{$ctrl.post.price}}</a>
+           </div>
+         </div>
+       </div>
+
+     <form class="col s12 m6 l6">
+         <div class="row">
+           <div class="input-field col s6 m3 l3">
+
+             <input id="title" value="{{$ctrl.post.title}}"type="text" class="validate" ng-model="$ctrl.edit.title" name="title" required>
+           </div>
+           <div class="input-field col s6 m3 l3">
+             <input id="price" type="tel" value="{{$ctrl.post.price}}" class="validate" ng-model="$ctrl.edit.price" name="price" required>
+           </div>
+           <div class="row">
+             <div class="input-field col s12 m6 l6">
+               <textarea id="description" class="materialize-textarea validate" ng-model="$ctrl.edit.description" required>{{$ctrl.post.description}}</textarea>
+             </div>
+           </div>
+           <div class="row">
+             <div class="input-field col s12 m6 l6">
+               <input id="image" ng-model="$ctrl.edit.item_image" value="{{$ctrl.post.item_image}}" class="validate" name="item_image" required>
+             </div>
+           </div>
+         </div>
+         <a class="waves-effect waves-light btn" ng-click="$ctrl.update($ctrl.edit, $ctrl.post.id)">button</a>
+       </form>
+     </div>

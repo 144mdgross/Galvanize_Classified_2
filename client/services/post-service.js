@@ -1,21 +1,16 @@
 (function() {
   'use strict'
 
-  console.log('service here');
-
   angular
     .module('app')
     .service('PostService', PostService)
 
   function PostService($http) {
     const BASE_URL = '/'
-    console.log('inside post service function');
 
     this.getPosts = function() {
-      console.log('insdie getPosts');
       return $http.get('/classifieds')
         .then(posts => {
-          console.log('posts', posts);
           return posts.data
         })
     }
