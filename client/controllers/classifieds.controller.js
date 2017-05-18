@@ -14,6 +14,9 @@ angular
       const vm = this
 
       vm.$onInit = onInit
+      // $scope.options = ['-created_at', 'lowest price', 'highest price']
+      // $scope.selected = '-created_at'
+      // $scope.change = change
 
       function onInit() {
         $http.get('/classifieds')
@@ -21,7 +24,12 @@ angular
             vm.posts = res.data
           })
       }
-    } // /end of controller
+
+      // function change() {
+      //   vm.selected === '-created_at' || vm.selected === 'most recent' ? vm.selected = '-created_at' : vm.selected === 'lowest price' ? vm.selected = '-price' : vm.selected = 'price'
+      // }
+
+    } // end of controller
 
 
 })()

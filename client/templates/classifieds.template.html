@@ -4,7 +4,13 @@
 <div class="row">
   <a ui-sref="newPost" class="waves-effect waves-light btn">new posting</a>
 </div>
-       <div class="col s12 m6 l6" ng-repeat="post in $ctrl.posts | filter:$ctrl.search">
+<div class="row">
+  <div class="col s12 m3 l3">
+  <!-- <select ng-options="choice in options" ng-model="selected" ng-change="change()"></select> -->
+</div>
+  </div>
+  <br><br><br>
+       <div class="col s12 m6 l6" ng-repeat="post in $ctrl.posts | filter:$ctrl.search | orderBy:selected">
          <div class="card">
            <div class="card-image">
              <img src="{{post.item_image}}">

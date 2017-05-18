@@ -13,6 +13,7 @@
 
       vm.$onInit = onInit
       vm.update = update
+      vm.del = del
 
       function onInit() {
         $http.get(`/classifieds/${$stateParams.id}`)
@@ -25,6 +26,13 @@
         $http.patch(`/classifieds/${id}`, edited)
           .then(updated => {
             delete vm.edit
+            $state.go('classifieds')
+          })
+      }
+
+      function del(id) {
+        $http.delete(`/classifieds/${id}`)
+          .then(go => {
             $state.go('classifieds')
           })
       }
