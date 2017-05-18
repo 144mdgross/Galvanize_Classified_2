@@ -14,6 +14,7 @@ angular
       const vm = this
 
       vm.$onInit = onInit
+      vm.del = del
       $scope.options = ['most recent', 'lowest price', 'highest price']
       $scope.selected = '-created_at'
       $scope.change = change
@@ -28,8 +29,13 @@ angular
       function change() {
         console.log('change called');
         vm.selected === '-created_at' || vm.selected === 'most recent' ? vm.selected = '-created_at' : vm.selected === 'lowest price' ? vm.selected = 'price' : vm.selected = '-price'
+      }
 
-        console.log(vm.selected);
+      function del(id){
+        $http.delete(`/classifieds/${id}`)
+          .then(gone => {
+            onInit()
+          })
       }
 
     } // end of controller
