@@ -20,5 +20,10 @@
         url: 'edit/:id',
         component: 'singlePost'
       })
+      .state({
+        name: 'newPost',
+        url: 'posts/new',
+        component: 'newPost'
+      })
   }
 }())

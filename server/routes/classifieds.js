@@ -23,7 +23,6 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  console.log(req.body);
   knex('classifieds')
     .insert([{
       title: req.body.title,
