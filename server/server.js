@@ -6,16 +6,22 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path')
 
-app.use(logger('dev'));
+if (process.env.NODE_ENV !== 'test') {
+  const logger = require('morgan')
+  app.use(logger('dev'))
+}
+
 app.use(bodyParser.json());
 
-const messages = require('./routes/classifieds');
+app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../node_modules')));
+
+
+const messages = require('./routes/classifieds.js');
 app.use('/classifieds', messages);
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../client')));
-app.use(express.static(path.join(__dirname, '../node_modules')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

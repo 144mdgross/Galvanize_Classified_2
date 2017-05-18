@@ -1,1 +1,16 @@
-<h1> helllloooo </h1>
+<div class="row">
+       <div class="col s12 m5 l5" ng-repeat="post in $ctrl.posts">
+         <div class="card">
+           <div class="card-image">
+             <img src="{{post.item_image}}">
+             <span class="card-title">{{post.title}}</span>
+           </div>
+           <div class="card-content">
+             <p>{{post.description}}</p>
+           </div>
+           <div class="card-action">
+             <a href="#">{{post.price}}</a>
+           </div>
+         </div>
+       </div>
+     </div>

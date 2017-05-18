@@ -1,33 +1,38 @@
 (function() {
   'use strict'
 
+  console.log('service here');
+
   angular
     .module('app')
-    .service('Post Service', PostService)
-
-  PostService.$inject = ['$http']
+    .service('PostService', PostService)
 
   function PostService($http) {
-    const BASE_URL = '/classifieds'
+    const BASE_URL = '/'
+    console.log('inside post service function');
 
     this.getPosts = function() {
-      return $http.get(BASE_URL)
-        .then(posts => posts)
+      console.log('insdie getPosts');
+      return $http.get('/classifieds')
+        .then(posts => {
+          console.log('posts', posts);
+          return posts.data
+        })
     }
 
     this.getPost = function(id) {
       return $http.get(BASE_URL + '/' + id)
-      .then(post => post)
+      .then(post => post.data)
     }
 
     this.createPost = function(post) {
       return $http.post(BASE_URL, post)
-        .then(newPost => newPost)
+        .then(newPost => newPost.data)
     }
 
     this.editPost = function(id, edit) {
       return $http.patch(BASE_URL + '/' + id, edit)
-        .then(edited => edited)
+        .then(edited => edited.data)
     }
 
     this.delPost = function(id) {
@@ -36,5 +41,7 @@
     }
 
   }
+
+PostService.$inject = ['$http']
 
 })()
