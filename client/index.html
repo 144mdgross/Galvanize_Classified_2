@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <base href="/">
     <title>Post That</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <!-- material icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  </head>
-  <body>
-  <ui-view> </ui-view>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="/javascripts/events.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <ui-view> </ui-view>
 
 
-  <script src="/angular/angular.js" charset="utf-8"></script>
-  <script src="/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
-  <script src="/app.module.js" charset="utf-8"></script>
-  <script src="/app.config.js" charset="utf-8"></script>
-  <script src="/services/post-service.js" charset="utf-8"></script>
-  <script src="/controllers/classifieds.controller.js" charset="utf-8"></script>
-  <script src="/controllers/single-post.controller.js" charset="utf-8"></script>
-  <script src="/controllers/new-post.controller.js" charset="utf-8"></script>
-  </body>
+    <script src="/angular/angular.js" charset="utf-8"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="/app.module.js" charset="utf-8"></script>
+    <script src="/app.config.js" charset="utf-8"></script>
+    <script src="/services/post-service.js" charset="utf-8"></script>
+    <script src="/controllers/classifieds.controller.js" charset="utf-8"></script>
+    <script src="/controllers/single-post.controller.js" charset="utf-8"></script>
+    <script src="/controllers/new-post.controller.js" charset="utf-8"></script>
+</body>
+
 </html>
