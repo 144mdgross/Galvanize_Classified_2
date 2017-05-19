@@ -37,8 +37,5 @@ angular
             onInit()
           })
       }
-
     } // end of controller
-
-
 })()
